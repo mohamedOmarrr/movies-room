@@ -1,0 +1,74 @@
+<div
+  class="container flex justify-between items-center w-full mx-auto p-2"
+  (mouseenter)="pause()"
+  (mouseleave)="resume()"
+>
+  <i
+    (click)="prev()"
+    class="fa fa-chevron-left text-green-300 text-7xl font-extrabold px-2 py-1 cursor-pointer active:scale-95"
+  ></i>
+
+  <div class="carouser w-full overflow-hidden">
+    <div
+      #wrapper
+      class="wrapper flex transition-transform duration-300 ease-in-out"
+    >
+      @for (item of carouselHOme(); track $index) {
+      <div #card class="card w-[250px] flex-shrink-0">
+        <div class="inner p-4 text-white">
+          <img
+            class="w-full h-[270px] object-cover"
+            [src]="baseURL + (item.poster_path || item.profile_path)"
+            [alt]="item.title || item.name"
+          />
+
+          <div
+            class="detailes bg-gray-900/30 shadow-inner rounded-md p-2 rounded-t-none"
+          >
+            <div class="title-Year flex justify-between items-center mt-1 mb-3">
+              <h1
+                class="text-[18px] font-bold truncate whitespace-nowrap overflow-hidden max-w-[150px]"
+                [title]="item.title || item.name"
+              >
+                {{ item.title || item.name }}
+              </h1>
+
+              <h1 class="text-[18px] font-[300] text-green-300">
+                @if (item.release_date) {
+                {{ item.release_date }}
+                } @else if (item.first_air_date) {
+                {{ item.first_air_date }}
+                }
+              </h1>
+            </div>
+
+            @if (item.vote_average) {
+            <div
+              class="qualtiy-duration-rate flex justify-between items-center"
+            >
+              <h3 class="border-2 border-green-300 font-medium px-1">HD</h3>
+              <div class="DR flex">
+                <div class="rate flex items-center">
+                  <i class="fas fa-star text-[12px] me-1 text-yellow-300"></i>
+                  <h6>{{ item.vote_average }}</h6>
+                </div>
+              </div>
+            </div>
+            } @if (item.known_for_department) {
+            <div class="mt-2 text-sm text-gray-300">
+              <p>Known for: {{ item.known_for_department }}</p>
+              <p>Popularity: {{ item.popularity }}</p>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+
+  <button
+    (click)="next()"
+    class="fa fa-chevron-right text-green-300 text-7xl font-extrabold px-2 py-1 cursor-pointer active:scale-95"
+  ></button>
+</div>

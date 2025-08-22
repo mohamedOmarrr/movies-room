@@ -1,0 +1,108 @@
+<section
+  class="relative h-[80vh] bg-cover bg-center flex items-center"
+  style="background-image: url('./images/cover2.jpg')"
+>
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"
+  ></div>
+
+  <div
+    class="relative z-10 px-6 md:px-20 text-white max-w-2xl text-center md:text-left font-poppins"
+  >
+    <h1
+      class="text-3xl md:text-5xl font-extrabold leading-tight font-montserrat"
+    >
+      Unlimited
+      <span class="text-green-400 text-4xl md:text-6xl font-montserrat"
+        >Entertainment</span
+      >,
+      <br />
+      <span class="text-2xl md:text-4xl font-poppins"
+        >Movies, TVs shows, & More.</span
+      >
+    </h1>
+    <p class="mt-4 text-gray-300 text-base md:text-lg font-light font-poppins">
+      Enjoy the latest movies, drama, and TV shows anytime, anywhere.
+    </p>
+  </div>
+</section>
+
+<section class="bg-[#1a2e46] relative">
+  <div class="container mx-auto px-6 lg:px-12 py-15">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-5">
+      <h1
+        class="text-3xl font-[700] w-fit px-4 py-2 rounded-md text-center md:text-left mx-auto md:mx-0 text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-500 flex items-center gap-2"
+      >
+        <i class="fa fa-film text-green-400"></i>
+        Upcoming Movies
+      </h1>
+      <a
+        routerLink="/movie"
+        class="md:mt-0 absolute bottom-5 md:static text-center text-white bg-[rgb(101,133,163)] shadow-inner-custom w-fit p-2 px-3 font-[400] rounded-3xl border-2 border-green-300 active:scale-95 cursor-pointer"
+      >
+        All Movies
+      </a>
+    </div>
+    <app-carousel [carouselHOme]="movies()"></app-carousel>
+  </div>
+</section>
+
+<section class="bg-[#213a58] relative">
+  <div class="container mx-auto px-6 lg:px-12 py-15">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-5">
+      <h1
+        class="text-3xl font-[700] w-fit px-4 py-2 rounded-md text-center md:text-left mx-auto md:mx-0 text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-500 flex items-center gap-2"
+      >
+        <i class="fa fa-star text-green-400"></i>
+        Top Rated Animation
+      </h1>
+      <a
+        routerLink="/movie"
+        class="md:mt-0 absolute bottom-5 md:static text-center text-white bg-[rgb(101,133,163)] shadow-inner-custom w-fit p-2 px-3 font-[400] rounded-3xl border-2 border-green-300 active:scale-95 cursor-pointer"
+      >
+        All Animation
+      </a>
+    </div>
+    <app-carousel [carouselHOme]="anime()"></app-carousel>
+  </div>
+</section>
+
+<section class="bg-[#1a2e46] relative">
+  <div class="container mx-auto px-6 lg:px-12 py-15">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-5">
+      <h1
+        class="text-3xl font-[700] w-fit px-4 py-2 rounded-md text-center md:text-left mx-auto md:mx-0 text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-500 flex items-center gap-2"
+      >
+        <i class="fa fa-tv text-green-400"></i>
+        On THe Air
+      </h1>
+      <a
+        routerLink="/tv"
+        class="md:mt-0 absolute bottom-5 md:static text-center text-white bg-[rgb(101,133,163)] shadow-inner-custom w-fit p-2 px-3 font-[400] rounded-3xl border-2 border-green-300 active:scale-95 cursor-pointer"
+      >
+        All TVs Show
+      </a>
+    </div>
+    <app-carousel [carouselHOme]="tv()"></app-carousel>
+  </div>
+</section>
+
+<section class="bg-[#213a58] relative">
+  <div class="container mx-auto px-6 lg:px-12 py-15">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-5">
+      <h1
+        class="text-3xl font-[700] w-fit px-4 py-2 rounded-md text-center md:text-left mx-auto md:mx-0 text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-500 flex items-center gap-2"
+      >
+        <i class="fa fa-user text-green-400"></i>
+        Top Actors
+      </h1>
+      <a
+        routerLink="/home"
+        class="md:mt-0 absolute bottom-5 md:static text-center text-white bg-[rgb(101,133,163)] shadow-inner-custom w-fit p-2 px-3 font-[400] rounded-3xl border-2 border-green-300 active:scale-95 cursor-pointer"
+      >
+        View All
+      </a>
+    </div>
+    <app-carousel [carouselHOme]="actor()"></app-carousel>
+  </div>
+</section>
